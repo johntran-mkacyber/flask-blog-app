@@ -3,5 +3,6 @@ from app import app
 
 @app.route('/')
 def homepage():
-    name = request.args.get('name') if request.args.get('name') else '<unknown>'
-    return render_template('homepage.html', name=name)
+    name = request.args.get('name')
+    number = request.args.get('number')
+    return render_template('homepage.html', name=name, number=number)
